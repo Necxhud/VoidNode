@@ -15,14 +15,14 @@ android {
         versionCode = 1
         versionName = "0.0.1"
     }
+
+    buildFeatures {
+        compose = true
+    }
 }
 
 kotlin {
     jvmToolchain(17)
-}
-
-buildFeatures {
-    compose = true
 }
 
 dependencies {
