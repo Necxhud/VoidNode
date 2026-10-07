@@ -25,6 +25,8 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           packages: platform-tools
+          accept-android-sdk-licenses: true
+          log-accepted-android-sdk-licenses: false
 
       - name: Create Gradle wrapper
         run: gradle wrapper --gradle-version 8.9
@@ -34,7 +36,8 @@ jobs:
         env:
           KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
         run: |
-          echo "$KEYSTORE_BASE64" | base64 --decode > voidnode-release.jks
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > voidnode-release.jks
+          test -s voidnode-release.jks
 
       - name: Build release APK
         env:
