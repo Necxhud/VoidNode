@@ -18,6 +18,9 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Remove Termux aapt2 override
+        run: sed -i '/aapt2FromMavenOverride/d' gradle.properties
+
       - name: Build APK
         run: ./gradlew assembleDebug
 
