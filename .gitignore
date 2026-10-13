@@ -1,0 +1,9 @@
+music/
+*.bak
+*.bak2
+fix*.py
+build/
+.gradle/
+local.properties
+*.jks
+*.before-*
