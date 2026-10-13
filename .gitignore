@@ -1,11 +1,9 @@
-.gradle/
+music/
+*.bak
+*.bak2
+fix*.py
 build/
-app/build/
+.gradle/
 local.properties
-*.iml
-.idea/
-.cxx/
-.externalNativeBuild/
-
 *.jks
-*.keystore
+*.before-*

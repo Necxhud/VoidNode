@@ -12,8 +12,8 @@ android {
         applicationId = "com.voidnode.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.0.2"
+        versionCode = 3
+        versionName = "0.0.3"
     }
 
     signingConfigs {
@@ -34,11 +34,13 @@ android {
     buildFeatures {
         compose = true
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
-kotlin {
-    jvmToolchain(17)
-}
 
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2024.09.03"))
@@ -53,4 +55,13 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(
+            org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
+        )
+    }
 }
