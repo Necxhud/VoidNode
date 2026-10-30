@@ -2,6 +2,7 @@ package com.voidnode.app.ui.screens
 
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.Videocam
+import androidx.compose.material.icons.filled.Stop
 import android.net.Uri
 import android.content.Context
 import android.content.Intent
