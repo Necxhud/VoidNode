@@ -8,3 +8,7 @@ val VoidPrimary = Color(0xFF7C4DFF)
 val VoidSecondary = Color(0xFF00D4A8)
 val VoidText = Color(0xFFF2F5F9)
 val VoidMutedText = Color(0xFF9BA8B8)
+
+val LightBackground = Color(0xFFF5F7FA)
+val LightSurface = Color(0xFFFFFFFF)
+val LightText = Color(0xFF10151C)

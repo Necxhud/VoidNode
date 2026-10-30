@@ -23,7 +23,12 @@ object ChatStorage {
                     Message(
                         text = item.getString("text"),
                         time = item.getString("time"),
-                        isMe = item.optBoolean("isMe", true)
+                        isMe = item.optBoolean("isMe", true),
+                        status = item.optString("status", "read"),
+                        senderName = item.optString("senderName", ""),
+                        isVoice = item.optBoolean("isVoice", false),
+                        audioPath = item.optString("audioPath", "").ifBlank { null },
+                        durationSec = item.optInt("durationSec", 0)
                     )
                 )
             }
@@ -47,6 +52,11 @@ object ChatStorage {
             item.put("text", message.text)
             item.put("time", message.time)
             item.put("isMe", message.isMe)
+            item.put("status", message.status)
+            item.put("senderName", message.senderName)
+            item.put("isVoice", message.isVoice)
+            item.put("audioPath", message.audioPath ?: "")
+            item.put("durationSec", message.durationSec)
             array.put(item)
         }
 
