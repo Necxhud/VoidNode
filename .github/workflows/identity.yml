@@ -1,7 +1,7 @@
 name: identity-tests
 on:
   push:
-    paths: ['identity/**', '.github/workflows/identity.yml']
+    paths: ['identity/**', 'build.gradle.kts', 'settings.gradle.kts', '.github/workflows/identity.yml']
   workflow_dispatch:
 jobs:
   test:
@@ -11,10 +11,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
-      - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.8.1'
+          java-version: '17'
+      - run: chmod +x gradlew
       - name: Test
-        working-directory: identity
-        run: gradle test --console=plain
+        run: ./gradlew :identity:test --configure-on-demand --console=plain

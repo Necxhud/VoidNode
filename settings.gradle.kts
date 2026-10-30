@@ -36,4 +36,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "VoidNode"
-include(":app")
+include(":app", ":identity")
